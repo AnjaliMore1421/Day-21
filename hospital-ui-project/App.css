@@ -1,0 +1,275 @@
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #f8fafc;
+}
+
+/* ================= APP LAYOUT ================= */
+.app-container {
+  display: flex;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #1e293b;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  margin: 10px 0;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #38bdf8;
+}
+
+/* ================= MAIN CONTENT ================= */
+.main-content {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ================= DASHBOARD ================= */
+.dashboard-container {
+  padding: 20px;
+}
+
+/* Header */
+.dashboard-header {
+  margin-bottom: 20px;
+}
+
+.dashboard-header h1 {
+  color: #1e293b;
+}
+
+.dashboard-header p {
+  color: gray;
+}
+
+/* Cards */
+.dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  flex: 1 1 200px;
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Card Colors */
+.blue { background: #3b82f6; }
+.green { background: #22c55e; }
+.orange { background: #f59e0b; }
+.red { background: #ef4444; }
+
+/* Sections */
+.dashboard-sections {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.section {
+  flex: 1 1 300px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+  margin-bottom: 10px;
+}
+
+.section ul {
+  padding-left: 20px;
+}
+
+/* ================= FORM ================= */
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 12px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.form input,
+.form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.form button {
+  padding: 10px;
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #16a34a;
+}
+
+/* ================= COMPLEX LAYOUTS ================= */
+.layout {
+  margin-bottom: 40px;
+}
+
+/* ===== Layout 1 (Grid) ===== */
+.layout1 {
+  display: grid;
+
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: 60px 300px 60px;
+
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+
+  gap: 10px;
+  margin-bottom: 40px;
+
+  /*  ADD THIS */
+  width: 100%;
+}
+.layout1 div {
+  border-radius: 6px;
+  font-weight: bold;
+}
+/* Areas */
+.layout1 .header {
+  grid-area: header;
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+}
+
+.layout1 .sidebar {
+  grid-area: sidebar;
+  background: #16a34a;
+  color: white;
+  padding: 10px;
+  height: 100%;
+}
+
+.layout1 .content {
+  grid-area: content;
+  background: #f59e0b;
+  padding: 10px;
+}
+
+.layout1 .footer {
+  grid-area: footer;
+  background: #ef4444;
+  color: white;
+  padding: 10px;
+
+  /*  IMPORTANT FIX */
+  display: flex;
+  align-items: center;
+}
+
+/* ===== Layout 2 (Flex Cards) ===== */
+.layout2 {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.layout2 .card {
+  flex: 1;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Layout 3 (Gallery) ===== */
+.layout3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.layout3 .box {
+  flex: 1 1 150px;
+  background: linear-gradient(135deg, #9333ea, #7c3aed);
+  color: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+/* ================= CSS FIX DEMO ================= */
+.fix {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+/* Fix 1: Position */
+.fix1 {
+  position: relative;
+  top: 10px;
+  background: lightblue;
+}
+
+/* Fix 2: Overflow */
+.fix2 {
+  width: 200px;
+  overflow: hidden;
+  background: lightgreen;
+}
+
+/* Fix 3: Z-index */
+.fix3 {
+  position: relative;
+  z-index: 10;
+  background: pink;
+}
+
+/* Fix 4: Alignment */
+.fix4 {
+  display: flex;
+  justify-content: center;
+  background: orange;
+}
+
+/* Fix 5: Wrapping */
+.fix5 {
+  display: flex;
+  flex-wrap: wrap;
+  background: purple;
+  color: white;
+}
